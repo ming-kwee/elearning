@@ -1,0 +1,63 @@
+
+  <!--<ul id="al-sidebar-list-hov" class="al-sidebar-list-hov" >    -->
+<div id="browse-nav">
+<li>{{title}}
+  <i class="ion-arrow-down-b"></i>
+  <ul>
+
+    <li *ngFor="let item of menuItems">
+      <a *ngIf="!item.children && !item.url" [routerLink]="item.route.paths" class="al-sidebar-list-link-hov">
+        <i *ngIf="item.icon" class="{{ item.icon }}"></i><span>{{ item.title }}</span>
+      </a>
+
+      <a *ngIf="!item.children && item.url"  [href]="item.url" class="al-sidebar-list-link-hov">
+        <i *ngIf="item.icon" class="{{ item.icon }}"></i><span>{{ item.title }}</span>
+      </a>
+
+      <a *ngIf="item.children"  href  class="al-sidebar-list-link-hov">
+        <i *ngIf="item.icon" class="{{ item.icon }}"></i><span>{{ item.title }}</span>       
+        <b *ngIf="item.children" class="fa fa-angle-right" ></b>  
+      </a>
+           
+
+      <ul *ngIf="item.children">
+        <li *ngFor="let subitem of item.children">
+          <a *ngIf="!subitem.children && !subitem.url" [routerLink]="subitem.route.paths" class="al-sidebar-list-link-hov">
+            <i *ngIf="subitem.icon" class="{{ subitem.icon }}"></i><span>{{ subitem.title }}</span>
+          </a>
+
+          <a *ngIf="!subitem.children && subitem.url"  [href]="subitem.url" class="al-sidebar-list-link-hov">
+            <i *ngIf="subitem.icon" class="{{ subitem.icon }}"></i><span>{{ subitem.title }}</span>
+          </a>
+
+          <a *ngIf="subitem.children"  href  class="al-sidebar-list-link-hov">
+            <i *ngIf="subitem.icon" class="{{ subitem.icon }}"></i><span>{{ subitem.title }}</span>            
+          </a>
+          <b *ngIf="subitem.children" class="fa fa-angle-right" ></b>
+
+          <ul *ngIf="subitem.children">
+              <li *ngFor="let subsubitem of subitem.children">
+                <a *ngIf="!subsubitem.children && !subsubitem.url" [routerLink]="subsubitem.route.paths" class="al-sidebar-list-link-hov">
+                  <i *ngIf="subsubitem.icon" class="{{ subsubitem.icon }}"></i><span>{{ subsubitem.title }}</span>
+                </a>
+
+                <a *ngIf="!subsubitem.children && subsubitem.url"  [href]="subsubitem.url" class="al-sidebar-list-link-hov">
+                  <i *ngIf="subsubitem.icon" class="{{ subsubitem.icon }}"></i><span>{{ subsubitem.title }}</span>
+                </a>
+
+                <a *ngIf="subsubitem.children"  href  class="al-sidebar-list-link-hov">
+                  <i *ngIf="subsubitem.icon" class="{{ subsubitem.icon }}"></i><span>{{ subsubitem.title }}</span>                  
+                </a>
+                <b *ngIf="subsubitem.children" class="fa fa-angle-right" ></b>
+
+              </li>
+          </ul>
+
+        </li>
+      </ul>
+
+    </li>
+
+  </ul>
+</li>
+</div>

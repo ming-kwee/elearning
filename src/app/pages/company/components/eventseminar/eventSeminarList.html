@@ -1,0 +1,20 @@
+<div class="widgets">
+  <div class="row">
+    <button id="add-button" (click)="addNewProduct()" type="button" class="btn btn-primary"><i class="add-item-icon ion-plus-round"></i> Tambah</button>
+    <ba-card baCardClass="with-scroll">
+<p-dataTable [value]="eventSs"  [ngBusy]="busyloadevent" selectionMode="single" [(selection)]="selectedEvent" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)">
+
+      <!--<p-dataTable [value]="eventSs" [responsive]="true" [stacked]="stacked"  sortMode="single" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">   -->
+          <!--<p-column [style]="{'width':'38px'}" selectionMode="none"></p-column>-->
+          <p-column field="event_name" header="Event Name" [sortable]="true" [filter]="true" filterPlaceholder="Search Name"></p-column>
+          <p-column field="event_location" header="Event Location" [sortable]="true" [filter]="true" filterPlaceholder="Search Location"></p-column>
+          <p-column field="category" header="category" [sortable]="true" [filter]="true" filterPlaceholder="Search category"></p-column>
+          <p-column field="event_date.formatted" header="Event Date" [sortable]="true" [filter]="true" filterPlaceholder="Search Date"></p-column>
+
+          <footer>
+          </footer>
+      </p-dataTable>
+    
+    </ba-card>
+  </div>
+</div>

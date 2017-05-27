@@ -1,0 +1,24 @@
+<div class="widgets">
+  <div class="row">
+    <button id="add-button" (click)="addNewProduct()" type="button" class="btn btn-primary"><i class="add-item-icon ion-plus-round"></i> Tambah</button>
+    <p-growl  [value]="msgs"></p-growl>  
+    <ba-card baCardClass="with-scroll">
+       <p-dropdown [options]="events" [(ngModel)]="selectedEvent" [filter]="showfilter" [style]="{'width':'200px'}" (onChange)="onChangeCombo(selectedEvent)"></p-dropdown>
+       <br /><br />      
+      <p-dataTable   [ngBusy]="busyloadevent" [value]="sponsor" selectionMode="single" [(selection)]="selectedSponsor" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)">
+      <!--<p-dataTable [value]="eventSs" [responsive]="true" [stacked]="stacked"  sortMode="single" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">   -->
+          <!--<p-column [style]="{'width':'38px'}" selectionMode="none"></p-column>-->
+          <!--<p-column field="event_name" header="Event Name" [sortable]="true" [filter]="true" filterPlaceholder="Search Event Name"></p-column>-->
+          <p-column field="sponsor_name" header="Sponsor Name" [sortable]="true" [filter]="true" filterPlaceholder="Search Sponsor Name"></p-column>
+          <p-column field="contact_person" header="Contact Person" [sortable]="true" [filter]="true" filterPlaceholder="Search Contact"></p-column>
+          <!--<p-column field="join_date.formatted" header="Join Date" [sortable]="true" [filter]="true" filterPlaceholder="Search Date"></p-column>-->
+          <p-column field="booth_no" header="Booth No" [sortable]="true" [filter]="true" filterPlaceholder="Booth No"></p-column>
+          <p-column field="email" header="Email" [sortable]="true" [filter]="true" filterPlaceholder="Email"></p-column>
+
+          <footer>
+          </footer>
+      </p-dataTable>
+    
+    </ba-card>
+  </div>
+</div>

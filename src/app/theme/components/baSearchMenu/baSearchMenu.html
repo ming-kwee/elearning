@@ -1,0 +1,35 @@
+
+<div id="browse-nav">
+      <a	href="javascript:void(0)" (click)="toggleNav()" class="al-sidebar-list-link-hov">
+				{{title}}
+      </a>
+</div>
+
+<div styled class="search-menu-full-screen ">
+<section id="full-screen-nav" class="panel" [ngClass]="typeofScreen" [class.active]="navToggle === true">
+	<!--<div styled class="search-menu"  [class.active]="navToggle === true">
+		<div class="row">
+			<div class="search-menu-location">
+						<input type="text"  class="form-control" id="inputProductName" placeholder="Lokasi, kota, alamat yang anda cari">
+			</div>
+			<div class="search-menu-kategori"> 
+					<button type="button" class="btn btn-danger btn-block btn-xm"  (click)="toggleNav()">Kategori</button>
+			</div>
+		</div>
+	</div>-->
+  <!--<button id="back-button" (click)="backtolist()" type="button" class="btn btn-default">Back</button>-->
+    <!--<button class="btn" id="x"  (click)="toggleNav()">
+      Xx
+    </button>-->
+		      <a 	href="javascript:void(0)" (click)="toggleNav()" class="toggleClose">
+				x
+      </a>
+<div class="row">
+  <div class="search-menu-content col-xlg-12 col-xl-12 col-lg-12 col-sm-12 col-xs-12">
+      <ba-menu-me [menuRoutes]="routes"
+			[sidebarCollapsed]="isMenuCollapsed"
+           (expandMenu)="menuExpand()"></ba-menu-me>
+  </div>
+</div>
+</section>
+</div>

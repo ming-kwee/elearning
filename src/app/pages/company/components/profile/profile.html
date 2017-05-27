@@ -1,0 +1,56 @@
+<!--<div>{{ form |json}}</div>-->
+<div class="widgets">
+  <div class="row">
+    <p-growl [value]="msgs"></p-growl>
+    <ba-card title="account: {{form.value['email']}} " baCardClass="with-scroll">
+
+      <form novalidate [formGroup]="form"  (ngSubmit)="onSubmit(form.value)"   class="form-horizontal">
+        <div class="col-md-12">
+            <div class="form-group row"> <!-- AccountName -->
+              <label for="inputAccountName" class="col-sm-3 form-control-label">Account Name</label>
+              <div class="col-sm-9">
+                <input type="text" [ngBusy]="busyloadevent" formControlName="account_name" class="form-control" id="inputAccountName" placeholder="Person Name">
+              </div>
+            </div>          
+            <div class="form-group row"> <!-- CompanyName -->
+              <label for="inputCompanyName" class="col-sm-3 form-control-label">Company Name</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="company_name" class="form-control" id="inputCompanyName" placeholder="Company Name">
+              </div>
+            </div>            
+            <div class="form-group row"> <!-- CompanyAddress -->
+              <label for="inputCompanyAddress" class="col-sm-3 form-control-label">Company Address</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="company_address" class="form-control" id="inputCompanyAddress" placeholder="Company Address">
+              </div>
+            </div>            
+            <div class="form-group row"> <!-- Category -->
+              <label for="inputCategory" class="col-sm-3 form-control-label">Category</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="category" class="form-control" id="inputCategory" placeholder="Category">
+              </div>
+            </div>            
+            <div class="form-group row"> <!-- CityState -->
+              <label for="inputCityState" class="col-sm-3 form-control-label">City State</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="city_state" class="form-control" id="inputCityState" placeholder="City State">
+              </div>
+            </div>            
+            <div class="form-group row"> <!-- PhoneNumber -->
+              <label for="inputPhoneNumber" class="col-sm-3 form-control-label">Phone Number</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="phone_number" class="form-control" id="inputPhoneNumber" placeholder="Phone Number">
+              </div>
+            </div>          
+
+            <div class="form-group row"> <!-- submit -->
+              <div class="offset-sm-3 col-sm-9">
+                <button [disabled]="!form.valid" type="submit" class="btn btn-warning">Submit</button>
+              </div>
+            </div>
+          </div>
+<!--<div>{{form.value['_id'] | json}}</div>-->
+      </form>
+    </ba-card>
+  </div>
+</div>

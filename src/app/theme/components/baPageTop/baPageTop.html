@@ -1,0 +1,40 @@
+<div styled class="page-top clearfix" [ngClass]="fixedOrabsolute" baScrollPosition maxHeight="50" (scrollChange)="scrolledChanged($event)"
+     [ngClass]="{scrolled: isScrolled}">
+  <a routerLink="/pages2/home" class="al-logo clearfix"><i class="ion-ios-home"></i> e-learning</a>
+  <a href *ngIf="!isHome" (click)="toggleMenu()" class="collapse-menu-link ion-navicon"></a>
+
+
+  <ba-menu-hov *ngIf="!isMobileScreen" [title]="'Browse'"></ba-menu-hov>
+  <ba-search-menu *ngIf="isMobileScreen" [title]="'Browse'"></ba-search-menu>
+
+  <div class="search">
+    <i class="ion-ios-search-strong" ng-click="startSearch()"></i>
+    <input id="searchInput" type="text" placeholder="Search for...">
+  </div>
+
+
+  <div class="user-profile clearfix">
+      <!--<span class="al-user-profile"> {{isLoggedIn}}
+      </span>-->
+    <a href="javascript:void(0)" class="al-user-profile"  (click)="logInOut()" id="user-log-in" aria-expanded="false">
+      <span *ngIf="!isLoggedIn">
+      Log In
+      </span>
+      <span *ngIf="isLoggedIn">
+      Log Out
+      </span>
+      
+    </a>
+
+    <a href="javascript:void(0)" class="al-user-profile" (click)="signUpOrConsole()" id="user-sign-up" aria-expanded="false">
+      <span *ngIf="!isLoggedIn">
+      Sign Up
+      </span>
+      <span *ngIf="isLoggedIn">
+      Console
+      </span>      
+    </a>
+
+    <ba-msg-center></ba-msg-center>
+  </div>
+</div>

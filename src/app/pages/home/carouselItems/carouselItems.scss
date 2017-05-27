@@ -1,0 +1,138 @@
+.carousel-recent-offers {
+position:relative;
+}
+
+.cards-heading{
+    font-weight: 300;
+}
+
+// ini adl utk tombol paling kiri dan kanan carousel. utk klik geser ke kiri dan kanan
+.carousel-recent-offers .next-carousel, .carousel-recent-offers .previous-carousel {
+    outline: 0;
+    -webkit-transition: background 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out;
+    background-color: rgba(234,235,236,0.7);
+    height: 100%;
+    color: #70747c;
+    box-shadow: none;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    position: absolute;
+    top: 0px;
+}
+
+// ini jg utk tombol paling kiri dan kanan carousel. utk klik geser ke kiri dan kanan
+// blm mengerti kenapa harus dipisah dgn yg diatas
+.next-carousel, .previous-carousel{
+    box-sizing: border-box;
+    padding: 0;
+    width: 36px;
+    line-height: 38px;
+    height: 38px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #70747c;
+    text-align: center;
+    text-shadow: none;
+
+    z-index: 2;
+    border: none;
+
+
+}
+
+// ini tombol paling kanan carousel, set agar posisi paling kanan
+.next-carousel {
+    right: 0;
+}
+
+// ini agar sewaktu hover tombol warna tombol menjadi lebih transparant
+.previous-carousel:hover {
+  opacity: 0.5;
+}
+.next-carousel:hover {
+  opacity: 0.5;
+}
+
+
+// class ini ada pada a href yg per item yg melingkupi image dan info
+.offer--carousel {
+    display: inline-block;
+    height: 285px;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #d3d3d3;
+    border-radius: 2px;
+}
+
+// .offer--carousel --> .offer-image__column --> a --> img
+a img {
+    width: 100%;
+    max-height: 100%;
+}
+
+// .offer--carousel --> .offer-details__column --> .offer__details
+.offer--carousel .offer__details {
+    padding: 10px;
+}
+
+// .offer--carousel --> .offer-details__column --> .offer__details --> .offer__title
+.offer--carousel .offer__title {
+    max-height: 40px;
+    color: #006cb7;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    text-overflow: inherit;
+    white-space: normal;
+}
+
+// .offer--carousel --> .offer-details__column --> .offer__details --> .offer__subtitle
+.offer__title, .offer__subtitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.offer__subtitle {
+    color: #212121;
+}
+
+
+
+// .offer--carousel --> .offer-details__column --> .offer__details --> .rating--carousel
+.rating--carousel .rating__reviews {
+    color: #b9bcc2 !important;
+}
+.rating__value, .rating__reviews {
+    display: block;
+}
+.rating--carousel .rating__value, .rating--carousel .rating__reviews {
+    color: #212121;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+
+
+// .offer--carousel --> .offer-details__column --> .price--mini-dark
+.price--mini-dark {
+    top: 1px;
+    right: 1px;
+    padding: 5px;
+    color: #ffffff;
+    background-color: rgba(2,21,33,0.8);
+    position: absolute;
+    text-align: right;
+}
+.price--mini-dark .price__tag {
+    font-size: 20px;
+    color: #ffffff;
+}
+.price--mini-dark .price__info {
+    font-size: 12px;
+    line-height: 1.5;
+}
+

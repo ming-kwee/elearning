@@ -1,0 +1,25 @@
+role admin
+
+company profile -> no_telp
+
+status customerlist -> combobox ada email sent, confirmed, reject, call me later
+
+email customer sdh ada data tidak akan ditimpa
+
+message harus ditampilkan.
+
+bahasa english
+
+
+Hi.. nm customer
+Anda telah di undang ke seminar/event ...
+ada link utk 'konfirmasi yes or no' dgn automatis token id (api)
+
+compile to IOS ee-mobile
+
+1. role target hari sabtu 
+=============================================
+
+
+1. customer add ada status 
+2. delete confirmation

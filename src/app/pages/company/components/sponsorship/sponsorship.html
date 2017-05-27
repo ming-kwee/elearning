@@ -1,0 +1,93 @@
+<button id="back-button" (click)="backtolist()" type="button" class="btn btn-default">Back</button>
+<!--<div>{{ form |json}}</div>-->
+<div class="widgets">
+  <div class="row">
+    <ba-card title="for Event: {{ eventName}} " baCardClass="with-scroll">
+      <form novalidate [formGroup]="form"  (ngSubmit)="onSubmit(form.value)"   class="form-horizontal">
+        <div class="col-md-12">
+            <div class="form-group row"> <!-- sponsor_name -->
+              <label for="inputsponsor_name" class="col-sm-3 form-control-label">Sponsor Name</label>
+              <div class="col-sm-9">
+                <input type="text"   [ngBusy]="busyloadevent" formControlName="sponsor_name" class="form-control" id="inputsponsor_name" placeholder="Sponsor Name">
+              </div>
+            </div>      
+            <div class="form-group row"> <!-- sponsor_address -->
+              <label for="inputsponsor_address" class="col-sm-3 form-control-label">Sponsor Address</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="sponsor_address" class="form-control" id="inputsponsor_address" placeholder="Sponsor Address">
+              </div>
+            </div>                  
+            <div class="form-group row"> <!-- city_state -->
+              <label for="inputcity_state" class="col-sm-3 form-control-label">City State</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="city_state" class="form-control" id="inputcity_state" placeholder="City State">
+              </div>
+            </div>            
+            <div class="form-group row"> <!-- category_tags -->
+              <label for="inputcategory_tag" class="col-sm-3 form-control-label">Category tags</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="category_tag" class="form-control" id="inputcategory_tag" placeholder="Category tags">
+              </div>
+            </div>                
+            <div class="form-group row"> <!-- brand_tag -->
+              <label for="inputbrand_tag" class="col-sm-3 form-control-label">Brand tags</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="brand_tag" class="form-control" id="inputbrand_tag" placeholder="Brand tags">
+              </div>
+            </div>        
+            <div class="form-group row"> <!-- contact_person -->
+              <label for="inputcontact_person" class="col-sm-3 form-control-label">Contact person</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="contact_person" class="form-control" id="inputcontact_person" placeholder="Contact Person">
+              </div>
+            </div>            
+            <div class="form-group row"> <!-- join_date -->
+              <label for="inputjoin_date" class="col-sm-3 form-control-label">Join Date</label>
+              <div class="col-sm-9">
+                <ng2-datepicker formControlName="join_date"></ng2-datepicker> 
+              </div>
+            </div>               
+            <div class="form-group row"> <!-- booth_no -->
+              <label for="inputbooth_no" class="col-sm-3 form-control-label">Booth/Room no.</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="booth_no" class="form-control" id="inputbooth_no" placeholder="Booth/Room no.">
+              </div>
+            </div>           
+            <div class="form-group row" > <!-- email -->
+              <label for="inputemail" class="col-sm-3 form-control-label">Email</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="email" class="form-control" id="inputemail" placeholder="Email">
+              </div>
+            </div>   
+            <div class="form-group row" > <!-- password -->
+              <label for="inputpassword" class="col-sm-3 form-control-label">Password</label>
+              <div class="col-sm-9">
+                <input disabled type="text" formControlName="password" class="form-control" id="inputpassword" placeholder="Password" >
+              </div>
+            </div> 
+
+            <div class="form-group row"> <!-- submit -->
+              <div class="offset-sm-3 col-sm-9">
+                <button [disabled]="!form.valid" type="submit" class="btn btn-warning">Submit</button>
+                <button class="btn btn-danger" type="button" (click)="deleteEvent()"><i class="ion-trash-a"></i>Delete</button>
+              </div>
+            </div>
+          </div>
+<!--<div>{{UID}}</div>-->
+      </form>
+    </ba-card>
+
+
+     <ba-card baCardClass="with-scroll">
+      <p-dataTable  [value]="datavisitor" selectionMode="single" [(selection)]="selectedVisitor" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)">
+          <p-column field="barcodetext" header="Name" [sortable]="true" [filter]="true" filterPlaceholder="Search  Name"></p-column>
+          <p-column field="tglscan" header="DateTime scan" [sortable]="true" [filter]="true" filterPlaceholder="Search DateTime"></p-column>
+
+          <footer>
+          </footer>
+      </p-dataTable>
+    
+    </ba-card>
+
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<table align="center" border="1" width="292" height="180">
+    <tr>
+        <td [style.background-color]="TemplateSetting.ColorBackground">
+            <div id='Template1'>
+                <div [style.background-color]="TemplateSetting.ColorBackground">
+                    
+                    <p style="text-align: left;" [style.font-family]="TemplateSetting.FontFamilyEventSelected" [style.font-weight]="TemplateSetting.EventBold" [style.color]="TemplateSetting.ColorEvent" [style.font-size]="TemplateSetting.SizeEvent">{{TemplateSetting.event}}</p>
+                    <p style="text-align: left;" [style.font-family]="TemplateSetting.FontFamilyVenueSelected" [style.font-weight]="TemplateSetting.VenueBold" [style.color]="TemplateSetting.ColorVenue" [style.font-size]="TemplateSetting.SizeVenue">{{TemplateSetting.venue}}</p>
+                    <p style="text-align: left;" [style.font-family]="TemplateSetting.FontFamilyEventDateSelected" [style.font-weight]="TemplateSetting.EventDateBold" [style.color]="TemplateSetting.ColorEventDate" [style.font-size]="TemplateSetting.SizeEventDate">{{TemplateSetting.eventdate}}</p>
+                    <p [style.font-family]="TemplateSetting.FontFamilyCompanySelected" [style.font-weight]="TemplateSetting.CompanyBold" style="text-align: right;" [style.color]="TemplateSetting.ColorCompany" [style.font-size]="TemplateSetting.SizeCompany">{{TemplateSetting.company}}</p>
+
+                    <hr>
+                    <div style="text-align: center;">
+                        <p [style.font-family]="TemplateSetting.FontFamilyNamaSelected" [style.font-weight]="TemplateSetting.NamaBold" [style.color]="TemplateSetting.ColorNama" [style.font-size]="TemplateSetting.SizeNama" id="qrname">{{NamaVisitor}}</p>
+                        <!--<div id="qr">-->
+                            <qr-code [data]=QRBarcodeText [size]="60"></qr-code>
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+<div [hidden]="PrintDisable" style="text-align: center;">
+    <button class="btn" id='btn' (click)="printDiv()">Print</button>
+</div>
+
+<div [hidden]="TemplateChooseDisable" style="text-align: center;">
+    <button class="btn" (click)="pilihTemplate('Template1')">Template 1</button>
+</div>

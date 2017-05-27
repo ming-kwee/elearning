@@ -1,0 +1,38 @@
+   
+
+<div  class="row">
+  <div class="col-md-12">
+    <p-growl  [value]="msgs"></p-growl>
+    <ba-card title="Editor" baCardClass="with-scroll">
+       <p-dropdown [options]="events"  [(ngModel)]="selectedEvent" [filter]="showfilter" [style]="{'width':'200px'}" [ngBusy]="busyloadevent" (onChange)="onChangeCombo(selectedEvent)"></p-dropdown>
+
+       <br />
+       <br />       
+       <!--<span>Anda dapat mengetikkan kata {{'{{customer_name}'}}{{'}, {{event_name}'}}{{'}, {{company_name}'}}{{'}'}}  for the fields that you want to include in your invitation</span>-->
+      <ol>
+       <li>
+         <span>Anda dapat menggunakan kata {{'{{customer_name}'}}{{'}'}} ke dalam artikel undangan, dan kata tsb nantinya akan 
+          berganti menjadi nama orang yang anda undang pada saat kirim undangan 
+         </span>
+       </li>
+       <li>       
+         <span>Anda juga dapat menggunakan kata {{'{{Yes}'}}{{'} dan '}}{{'{{No}'}}{{'}'}}  ke dalam artikel undangan, dan kata tsb nantinya akan 
+          berganti menjadi tombol konfirmasi kedatangan yaitu sebuah tombol 'Yes' dan 'No' pada saat kirim undangan 
+         </span>
+       </li>
+      </ol>
+       <br />     
+      <ckeditor [(ngModel)]="ckeditorContent" [config]="config">
+        <ckbutton [name]="'saveButton'"
+      [command]="'saveCmd'"
+      (click)="save($event)"
+      [icon]="'save.png'"
+      [label]="'Save Document'"
+      [toolbar]="'clipboard,1'">
+    </ckbutton>
+      </ckeditor>
+    </ba-card>
+  </div>
+</div>
+<button id="save-button" (click)="save()" type="button" class="btn btn-default">Save</button>
+<div   [innerHTML]="ckeditorContent"></div>

@@ -1,0 +1,52 @@
+<div class="widgets">
+  <div class="row">
+    <!--<div class="col-md-12">-->
+      <div>
+        <p-growl  [value]="msgs"></p-growl>         
+
+          <div class="col-md-3">
+            <p-dropdown  [ngBusy]="busyloadevent" [options]="events"  [(ngModel)]="selectedEvent" [filter]="showfilter" [style]="{'width':'100%'}" (onChange)="onChangeCombo(selectedEvent)"></p-dropdown>
+          </div>
+          <div class="col-md-12">
+          <ba-card baCardClass="with-scroll">
+            <form enctype="multipart/form-data">
+            <p-messages [value]="confmsgs" [closable]="false"></p-messages>
+              <label for="exampleInputEmail1"   [hidden]="stepStatus=='Finish'">File Excel </label>
+              <button type="submit" class="btn btn-primary" (click)="upload()"  [hidden]="stepStatus=='Finish'">{{stepStatus}}</button>
+              <hr>
+              <input type="file" class="form-controle" id="exampleInputEmail1" (change)="fileChangeEvent($event)" placeholder="Upload file..." name="file">
+            </form>
+          </ba-card>
+          
+          
+          <ba-card baCardClass="with-scroll" [hidden]="stepStatus!='Process Upload'">   
+          <table class="mytable">         
+            <tr *ngFor="let c of freshdataheader" > 
+              <th>No</th>          
+              <th *ngFor="let key of c | keys" [hidden]="key=='old'">{{key}}</th>
+            </tr> 
+
+            <tr *ngFor="let c of freshdata; let i = index;"  class="clickable" data-toggle="collapse" [attr.id]="'row' +i" [attr.data-target]="'.row' +i">
+              <td>{{i+1}}</td>
+              <td *ngFor="let key of c | keys" [ngStyle]="{'color': c['old'] ? 'red' : ''}"  [hidden]="key=='old'">{{c[key]}}</td>
+
+              <div [hidden]="!c['old']" [attr.class]="'test collapse row' +i" >
+                <tr>  
+                  <th *ngFor="let key of c['old'] | keys">{{key}}</th>             
+                </tr>                
+                <tr>    
+                  <td *ngFor="let key of c['old'] | keys">{{c["old"][key]}}{{i}}</td> 
+                </tr>
+              </div>
+            </tr>  
+          </table>
+          </ba-card>      
+        </div>
+
+      <div>
+
+        <!--{{olddata| json}}-->
+      </div>
+    </div>
+  </div>
+</div>

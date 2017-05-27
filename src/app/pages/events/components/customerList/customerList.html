@@ -1,0 +1,36 @@
+<div class="widgets">
+  <div class="row">
+    <p-growl  [value]="msgs"></p-growl> 
+    <ba-card baCardClass="with-scroll">
+      <p-dropdown [options]="events"  [(ngModel)]="selectedEvent" [filter]="showfilter" [style]="{'width':'200px'}" (onChange)="onChangeCombo(selectedEvent)"></p-dropdown>
+      <br>
+      <br>        
+      <button type="submit" class="btn btn-primary"(click)="sendInvitation(selectedCustomers)"><i class="ion-paper-airplane"></i>  Send Invitation</button>
+      <button type="submit" class="btn btn-info" (click)="confirm(selectedCustomers)"><i class="ion-checkmark"></i>  Confirmation of arrival</button>
+      <button type="submit" class="btn btn-danger" (click)="reject(selectedCustomers)"><i class="ion-close"></i>  Reject of arrival</button>
+      <button type="submit" class="btn btn-danger" style="float: right;" (click)="deleteWithSelected(selectedCustomers)"><i class="ion-trash-a"></i>  Delete Customer</button>
+      <br /><br />      
+      <p-dataTable    [ngBusy]="busyloadevent" [value]="customers" [(selection)]="selectedCustomers" [responsive]="true" [stacked]="stacked"  sortMode="multiple" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">   
+          <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
+          <!--<p-column field="_id" header="id" [sortable]="true" [filter]="true" filterPlaceholder="Search id"></p-column>-->
+          <p-column field="firstname" header="FirstName" [sortable]="true" [filter]="true" filterPlaceholder="Search firstName"></p-column>
+          <p-column field="lastname" header="LastName" [sortable]="true" [filter]="true" filterPlaceholder="Search lastName"></p-column>
+          <p-column field="jobtitle" header="Jobtitle" [sortable]="true" [filter]="true" filterPlaceholder="Search jobtitle"></p-column>
+          <p-column field="email" header="Email" [sortable]="true" [filter]="true" filterPlaceholder="Search email"></p-column>
+          <p-column field="gender" header="Gender" [sortable]="true" [filter]="true" filterPlaceholder="Search gender"></p-column>
+          <p-column field="phone" header="Phone" [sortable]="true" [filter]="true" filterPlaceholder="Search phone"></p-column>
+          <p-column field="status" header="Status" [sortable]="true" [filter]="true" filterPlaceholder="Search status"></p-column>
+          <p-column styleClass="col-button" [style]="{'width':'50px'}">
+              <template pTemplate="header">
+                  <!--<button type="button" icon="fa-refresh"></button>-->
+              </template>
+              <template let-customer="rowData" pTemplate="body">
+                  <button pButton type="button" class="ui-button-secondary" (click)="editCustomer(customer)" icon="fa-pencil"></button>
+              </template>
+          </p-column>
+    </p-dataTable>
+    <br />
+    <button type="button" class="btn btn-primary"  (click)="addCustomer()" ><i class="ion-plus"></i> Add Customer</button>
+    </ba-card>
+  </div>
+</div>

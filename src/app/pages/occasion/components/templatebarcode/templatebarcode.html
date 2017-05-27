@@ -1,0 +1,127 @@
+<h1>Setting Template</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="event">Event:</label>
+            <input type="text" class="form-control" [(ngModel)]="json.event" id="event" placeholder="EVENT">
+            Size: <select class="form-control" id="SizeSelect" [(ngModel)]="json.SizeEvent">
+                <option *ngFor="let size of sizes" [value]="size">  
+                {{size}}
+                </option>
+            </select>
+            Font Family: <select class="form-control" id="FontFamilySelect" [(ngModel)]="json.FontFamilyEventSelected">
+                <option *ngFor="let fontfamily of FontFamilies" [value]="fontfamily">  
+                {{fontfamily}}
+                </option>
+            </select>
+            Color: <input class="form-control" [(colorPicker)]="json.ColorEvent" [style.background]="json.ColorEvent" [value]="json.ColorEvent" readonly="true"/>
+            <div class="checkbox">
+                <ba-checkbox [(ngModel)]="json.BoldEvent" [label]="'Bold'" (change)="Bolding()" [ngModelOptions]="{standalone: false}"></ba-checkbox>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="venue">Venue:</label>
+            <input type="text" class="form-control" [(ngModel)]="json.venue" id="venue" placeholder="VENUE">
+            Size: <select class="form-control" id="SizeSelect" [(ngModel)]="json.SizeVenue">
+                <option *ngFor="let size of sizes" [value]="size">  
+                {{size}}
+                </option>
+            </select>
+            Font Family: <select class="form-control" id="FontFamilySelect" [(ngModel)]="json.FontFamilyVenueSelected">
+                <option *ngFor="let fontfamily of FontFamilies" [value]="fontfamily">  
+                {{fontfamily}}
+                </option>
+            </select>
+            Color: <input class="form-control" [(colorPicker)]="json.ColorVenue" [style.background]="json.ColorVenue" [value]="json.ColorVenue" readonly="true"/>
+        <div class="checkbox">
+            <ba-checkbox [(ngModel)]="json.BoldVenue" [label]="'Bold'" (change)="Bolding()" [ngModelOptions]="{standalone: false}"></ba-checkbox>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="eventdate">Event Date:</label>
+        <input type="text" class="form-control" [(ngModel)]="json.eventdate" id="eventdate" placeholder="EVENT DATE">
+            Size: <select class="form-control" id="SizeSelect" [(ngModel)]="json.SizeEventDate">
+                <option *ngFor="let size of sizes" [value]="size">  
+                {{size}}
+                </option>
+            </select>
+            Font Family: <select class="form-control" id="FontFamilySelect" [(ngModel)]="json.FontFamilyEventDateSelected">
+                <option *ngFor="let fontfamily of FontFamilies" [value]="fontfamily">  
+                {{fontfamily}}
+                </option>
+            </select>
+            Color: <input class="form-control" [(colorPicker)]="json.ColorEventDate" [style.background]="json.ColorEventDate" [value]="json.ColorEventDate" readonly="true"/>
+            <div class="checkbox">
+            <ba-checkbox [(ngModel)]="json.BoldEventDate" [label]="'Bold'" (change)="Bolding()" [ngModelOptions]="{standalone: false}"></ba-checkbox>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="company">Company:</label>
+            <input type="text" class="form-control" [(ngModel)]="json.company" id="company" placeholder="COMPANY">
+            Size: <select class="form-control" id="SizeSelect" [(ngModel)]="json.SizeCompany">
+                <option *ngFor="let size of sizes" [value]="size">  
+                {{size}}
+                </option>
+            </select>
+            Font Family: <select class="form-control" id="FontFamilySelect" [(ngModel)]="json.FontFamilyCompanySelected">
+                <option *ngFor="let fontfamily of FontFamilies" [value]="fontfamily">  
+                {{fontfamily}}
+                </option>
+            </select>
+            Color: <input class="form-control" [(colorPicker)]="json.ColorCompany" [style.background]="json.ColorCompany" [value]="json.ColorCompany" readonly="true"/>
+            <div class="checkbox">
+            <ba-checkbox [(ngModel)]="json.BoldCompany" [label]="'Bold'" (change)="Bolding()" [ngModelOptions]="{standalone: false}"></ba-checkbox>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="nama">Nama:</label>
+            Size: <select class="form-control" id="NamaSelect" [(ngModel)]="json.SizeNama">
+                <option *ngFor="let size of sizes" [value]="size">  
+                {{size}}
+                </option>
+            </select>
+             Font Family: <select class="form-control" id="FontFamilySelect" [(ngModel)]="json.FontFamilyNamaSelected">
+                <option *ngFor="let fontfamily of FontFamilies" [value]="fontfamily">  
+                {{fontfamily}}
+                </option>
+            </select>
+            Color: <input class="form-control" [(colorPicker)]="json.ColorNama" [style.background]="json.ColorNama" [value]="json.ColorNama" readonly="true"/>
+            <div class="checkbox">
+            <ba-checkbox [(ngModel)]="json.BoldNama" [label]="'Bold'" (change)="Bolding()" [ngModelOptions]="{standalone: false}"></ba-checkbox>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="nama">Background:</label>
+            Color: <input class="form-control" [(colorPicker)]="json.ColorBackground" [style.color]="ColorEvent" [style.background]="json.ColorBackground" [value]="json.ColorBackground" readonly="true"/>
+        </div>
+
+        <button type="button" class="btn btn-default btn-raised" (click)="onCreate()">Save</button>
+        <button type="button" class="btn btn-default btn-raised" (click)="goBack()">Back</button>
+        <button type="button" class="btn btn-default btn-raised" (click)="reset()">Reset to Default</button>
+    </div>
+<!--</div>-->
+    <div class="col-md-6">
+        <table align = "center" style="position: relative;right: 0;">
+            <tr>
+                <td>
+                    <template1 [(TemplateSetting)] = json [(EventId)]= eventId [(EventName)]= eventName  [(TemplateChooseDisable)]= buttondisable [(PrintDisable)]= buttondisable2></template1>
+                </td>
+                <td>
+                    <template2 [(TemplateSetting)] = json [(EventId)]= eventId [(EventName)]= eventName  [(TemplateChooseDisable)]= buttondisable [(PrintDisable)]= buttondisable2></template2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <template3 [(TemplateSetting)] = json [(EventId)]= eventId [(EventName)]= eventName  [(TemplateChooseDisable)]= buttondisable [(PrintDisable)]= buttondisable2></template3>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

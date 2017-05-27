@@ -1,0 +1,27 @@
+
+
+
+<div id="print-section">
+    <div class="row">
+        <div class="col-md-12">
+      <p-dropdown [options]="events"  [(ngModel)]="selectedEvent" [filter]="showfilter" [style]="{'width':'200px'}" (onChange)="onChangeCombo(selectedEvent)"></p-dropdown>
+      <br>
+      <button pButton type="button" class="ui-button-secondary" icon="fa-print" iconPos="left" (click)="print()" label="Print"></button>    
+      <br>        
+<div   [ngBusy]="busyloadevent" ></div>
+            <ba-card baCardClass="with-scroll table-panel">   
+                        
+            <!-- Hasil -->
+            <table class="mytable">
+                <tr *ngFor="let c of sponAttendHeader" >           
+                <th *ngFor="let key of c | keys">{{key}}</th>
+                </tr>                    
+                <tr *ngFor="let c of sponAttendContent" >           
+                <td *ngFor="let key of c | keys">{{c[key]}}</td>
+                </tr>  
+            </table>
+            <!-- End Hasil -->
+            </ba-card>
+        </div>
+    </div>
+</div>

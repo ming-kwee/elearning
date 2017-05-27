@@ -1,0 +1,117 @@
+@import '../../sass/conf/conf';
+
+
+#browse-nav{
+    position: relative;
+    float: left;
+    margin-left: 10px;    
+}
+
+#browse-nav li,
+#browse-nav li a {
+    float: left;
+    background-color: #ddd;
+    color: darkslategray;
+}
+
+#browse-nav li ul li > a {
+    width: 100%;
+}
+
+
+#browse-nav li {
+    list-style: none;
+}
+
+#browse-nav  > li {
+    position: relative;
+    padding: 25px;
+}
+     
+
+#browse-nav > li   ul {
+    display: none;
+    position: absolute;
+    width: 300px;
+    top: 100%;
+    padding: 0;
+    margin: 0;
+    left:0px;
+
+    // -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    // box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    border: 1px solid hsla(0,0%,75%,.45);
+    font-size: 13px;
+    border-radius: 0;
+    border-bottom-left-radius: 2px;
+}
+
+#browse-nav li:hover >  ul {
+    display: block;
+}
+
+//----------------------------------------
+
+#browse-nav > li  ul  li {
+    float: none;
+    height: 35px;
+    line-height: 35px;
+    border-right: 0;
+    display: block;
+    margin-left: 0px;
+}
+
+
+
+#browse-nav li ul li{ 
+    &:hover{    
+        > a {
+            background-color: gray;
+        }
+    }
+}
+
+
+#browse-nav > li  ul   li   ul {
+    display: none;
+    margin: 0 0 0 -2px;
+    width: 300px;
+    z-index: 9999;
+    float: left !important;
+    background-color: #ddd; // #f06;
+}
+
+#browse-nav > li  ul  li:hover ul {
+    left: 300px;
+    top: 0;
+    min-height: 100%;
+}
+
+
+#browse-nav b {
+    opacity: 1;
+    width: 14px;
+    line-height: 33px;
+    text-shadow: none;
+    font-size: 15px;
+    position: absolute;
+    right: 10px;
+    padding: 0;
+    text-align: center;
+    color: #666666;
+    display: inline-block;
+}
+
+
+
+a.al-sidebar-list-link-hov {
+  i {
+    margin-left: 10px;  
+    margin-right: -10px;
+    width: 15px;
+    display: inline-block;
+  }
+  span {
+    margin-left: 15px;  
+  }  
+}

@@ -1,0 +1,48 @@
+  <h2 [hidden]="!Courses" class="cards-heading">{{HeaderTitle}}</h2>
+  <div class="carousel-recent-offers">
+<!--{{Courses}}-->
+     <button class="previous-carousel" [hidden]="!Courses" (click)="movePrev()"><i class="ion-chevron-left"></i></button>   
+    <ks-swiper-container [options]="example1SwipeOptions">
+      
+      <!--<ks-swiper-slide *ngFor="let s of [1,2,3,4,5,6,7,8,9,10]">-->
+      <ks-swiper-slide *ngFor="let s of Courses; let i = index">  
+        <!--<img src="http://api.randomuser.me/portraits/men/{{s}}.jpg">-->
+
+        <a class="offer--carousel" href="/offers/HDWY1DI2">
+          <div class="offer-image__column">
+            <img src="http://loremflickr.com/200/180/random={{i}}">
+            <!--<img src="{{s.featuredImage}}">-->
+          </div>
+          <div class="offer-details__column">
+            <div class="offer__details">
+              <h3 class="offer__title">
+                {{s.title}}
+              </h3>
+              <div class="offer__subtitle">
+                Cologne, Germany
+              </div>
+              <div class="offer__rating">
+                <div class="rating--carousel">
+                  <span class="rating__value">{{s.credit}}</span>
+                  <span class="rating__reviews">(44 reviews)</span>
+                </div>
+              </div>
+            </div>
+            <div class="price--mini-dark">
+              <div class="price__tag">
+                $ 56 US
+              </div>
+              <div class="price__info">
+                per night
+              </div>
+            </div>
+          </div>
+        </a>
+      </ks-swiper-slide>
+          
+    </ks-swiper-container>
+<button class="next-carousel"  [hidden]="!Courses"  (click)="moveNext()"><i class="ion-chevron-right"></i></button>
+
+
+
+  </div>

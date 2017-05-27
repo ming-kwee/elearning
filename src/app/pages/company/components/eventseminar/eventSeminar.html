@@ -1,0 +1,65 @@
+
+<button id="back-button" (click)="backtolist()" type="button" class="btn btn-default">Back</button>
+<!--<div>{{ form |json}}</div>-->
+<div class="widgets">
+  <div class="row">  
+    <ba-card    title="EO account: {{form.value['email']}} " baCardClass="with-scroll">
+
+      <form novalidate [formGroup]="form"   (ngSubmit)="onSubmit(form.value)"   class="form-horizontal">
+        <div class="col-md-12" >
+            <div class="form-group row"> <!-- EventName -->
+              <label for="inputEventName" class="col-sm-3 form-control-label">Event Name</label>
+              <div class="col-sm-9">
+                <input type="text" [ngBusy]="busyloadevent" formControlName="event_name" class="form-control" id="inputEventName" placeholder="Event Name">
+              </div>
+            </div>      
+            <div class="form-group row"> <!-- EventLocation -->
+              <label for="inputEventLocation" class="col-sm-3 form-control-label">Event Location</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="event_location" class="form-control" id="inputEventLocation" placeholder="Event Location">
+              </div>
+            </div>                  
+            <div class="form-group row"> <!-- EventAddress -->
+              <label for="inputEventAddress" class="col-sm-3 form-control-label">Event Address</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="event_address" class="form-control" id="inputEventAddress" placeholder="Event Address">
+              </div>
+            </div>            
+            <div class="form-group row"> <!-- CityState -->
+              <label for="inputCityState" class="col-sm-3 form-control-label">City State</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="city_state" class="form-control" id="inputCityState" placeholder="City State">
+              </div>
+            </div>                
+            <div class="form-group row"> <!-- Category -->
+              <label for="inputCategory" class="col-sm-3 form-control-label">Category</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="category" class="form-control" id="inputCategory" placeholder="Category">
+              </div>
+            </div>        
+            <div class="form-group row"> <!-- Date of event -->
+              <label for="inputDateofEvent" class="col-sm-3 form-control-label">Event Date</label>
+              <div class="col-sm-9">
+                <ng2-datepicker formControlName="event_date"></ng2-datepicker> 
+              </div>
+            </div>
+
+               
+            <div class="form-group row"> <!-- numParticipant -->
+              <label for="inputnumParticipant" class="col-sm-3 form-control-label">Number of Participants</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="num_of_participant" class="form-control" id="inputnumParticipant" placeholder="Number of Participants">
+              </div>
+            </div>           
+
+            <div class="form-group row"> <!-- submit -->
+              <div class="offset-sm-3 col-sm-9">
+                <button [disabled]="!form.valid" type="submit" class="btn btn-warning">Submit</button>
+                <button class="btn btn-danger" type="button" (click)="deleteEvent()"><i class="ion-trash-a"></i>Delete</button>
+              </div>
+            </div>
+          </div>
+      </form>
+    </ba-card>
+  </div>
+</div>

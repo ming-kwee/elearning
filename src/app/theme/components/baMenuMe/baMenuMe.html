@@ -1,0 +1,10 @@
+
+  <ul id="al-sidebar-list-me" class="al-sidebar-list-me" >
+    <ba-menu-item-me
+      [menuItem]="item"
+      (itemHover)="hoverItem($event)"
+      (toggleSubMenu)="toggleSubMenu($event)"
+      *ngFor="let item of menuItems"></ba-menu-item-me>
+  </ul>
+
+

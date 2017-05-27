@@ -1,0 +1,17 @@
+<aside class="al-sidebarfx"> <!--(mouseleave)="hoverElemTop=outOfArea" sidebarResize>-->
+  <!--{{menuItems|json}}-->
+  <!--<ul id="al-sidebarfx-list" class="al-sidebarfx-list" baSlimScroll [baSlimScrollOptions]="{height: menuHeight}">-->
+  <ul>  
+    <ba-menu-item-fx
+      [menuItem]="item"
+      *ngFor="let item of menuItems"
+      (itemHover)="hoverItem($event)"></ba-menu-item-fx>
+            <!--"
+      (toggleSubMenu)="toggleSubMenu($event)"-->
+  </ul>
+  <div class="row" id="buttonDiv">
+    <button type="submit" class="btn btn-success">Submit for Review</button>
+  </div>
+  <!--<div class="sidebarfx-hover-elem" [ngStyle]="{top: hoverElemTop + 'px', height: hoverElemHeight + 'px'}"
+       [ngClass]="{'show-hover-elem': showHoverElem }"></div>-->
+</aside>

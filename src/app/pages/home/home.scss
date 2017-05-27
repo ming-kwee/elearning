@@ -1,0 +1,140 @@
+@media screen and (min-width: 1620px) {
+  .row.shift-up {
+    > * {
+      margin-top: -573px;
+    }
+  }
+}
+
+@media screen and (max-width: 1620px) {
+  .card.feed-panel.large-card {
+    height: 824px;
+  }
+
+
+
+
+}
+
+
+
+.user-stats-card {
+  .card-title {
+    padding: 0 0 15px;
+  }
+}
+
+.blurCalendar {
+  height: 475px;
+}
+
+
+//ming 7/12/16
+@media (min-width: 1200px) {
+  .home-content {
+    padding: 38px 100px 8px 100px;
+  }
+}
+@media (max-width: 1200px) {
+  .home-content {
+    padding: 38px 0px 8px 0px;
+  }
+}
+
+
+.page-top {
+  background-color: transparent;
+  position: absolute;
+}
+
+.homecarousel-recent-offer {
+ padding-top: 48px;
+ margin-bottom: 30px !important;
+
+}
+
+
+
+
+#highlight {
+    padding: 0px;
+}
+
+#highlight #left {
+    color: #b0b0b0;
+    background: #262626;
+    min-height: 100px;
+}
+
+#highlight #right {
+    background: #fac42b;
+    min-height: 100px;
+}
+#right #countdown {
+    margin: 15px 0;
+}
+#countdown {
+    margin-top: 0;
+}
+.hasCountdown {
+    background-color: transparent;
+}
+
+.countdown_row {
+    clear: both;
+    width: 50%;
+    padding: 0px 2px;
+    text-align: center;
+}
+
+#countdown .countdown_section {
+    color: #262626;
+    font-family: 'montserratbold';
+    font-size: 13px;
+    text-align: left;
+    line-height: 10px;
+    letter-spacing: 0;
+    text-align: center;
+}
+.countdown_show3 .countdown_section {
+    width: 32.5%;
+}
+.countdown_section {
+    display: block;
+    float: left;
+    font-size: 17px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.countdown_row {
+    text-align: center;
+}
+
+#countdown .countdown_amount {
+    color: #666666;
+    font-family: 'montserratregular';
+    font-size: 40px;
+    text-align: left;
+    line-height: 50px;
+    text-align: center;
+}
+.countdown_amount {
+    font-weight: 100;
+    font-size: 50px;
+}
+
+
+#countdown .countdown_section {
+    color: #262626;
+    font-family: 'montserratbold';
+    font-size: 13px;
+    text-align: left;
+    line-height: 10px;
+    letter-spacing: 0;
+    text-align: center;
+}
+.countdown_show3 .countdown_section {
+    width: 32.5%;
+}
